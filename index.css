@@ -9,7 +9,6 @@
     height: 15vh;
     width: 100%;
     background-color: #1A535c;
-      /* background: linear-gradient(120deg, #7196dc 0%, #6c97d3 100%); */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,14 +20,14 @@
 }
 
 .logo{
-    height: 14vh;
-    width: 100px;
-    /* background-color:#1A535c; */
-    background-color: #ddd;
-    background-image: url('logo.png');
+    height: 13vh;
+    width: 80px;
+    background-color:#1A535c;
+    background-image: url('images/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 50%;
 }
 
 .menu{
@@ -78,11 +77,9 @@
 .secondcontainer{
     min-height: 70vh;
     width: 100%;
-    /* background-color: #1A535c; */
-    background-color:#4ecdc4;
+    background-color: #1A535c;
+    background-color:#1A535c;
     display: flex;
-    /* flex-direction: column;
-    justify-content: center; */
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -107,22 +104,21 @@
     width: 100%;
     position:absolute;
     opacity:0.7;
-    /* object-fit: cover; */
-    /* top: 100px; */
-    /* right: 50px; */
-    /* box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15); */
-    /* transition: all 0.5s ease; */
-    /* z-index: -1; */
+    
 }
 
+
 .heritage-title {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     font-weight: 600;
     color: #333;
     text-align: center;
-    margin: 80px 0 40px;
-    padding: 0 20px;
+    margin-left: 100px;
 }
 
 #one{
@@ -152,6 +148,19 @@
     margin-top: 20px;
     line-height: 1.6;
 }
+#app-name{
+    width: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #f7fff7;
+    line-height: 1.2;
+}
+#description{
+     font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: #f7fff7
+}
 
 #getstarts{
     background-color: #FF8357;
@@ -168,17 +177,18 @@
 }
 
 #getstarts:hover {
-    background-color: #e96c40;
+    background-color: #ffe66d;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(255, 131, 87, 0.4);
 }
 
-.allimage1, #allimage2 {
+.Overview {
     padding: 20px 50px;
-    background-color: #1A535c;
+    /* background-color: #1A535c; */
+    background-color: #f7fff7;
 }
 
-.firstline, .secondline {
+.firstline{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -230,72 +240,35 @@
     line-height: 1.5;
 }
 
-.keyheading{
-    text-align: center;
-    padding: 60px 0 30px;
-    background-color: #c2e9bd;
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em 1em 1em 1em;
+  background-color: #1A535c;
+  height: auto;
+}
+.feature-card {
+  background: #f7fff7;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(49,130,206,0.07);
+  padding: 2em 1.5em;
+  max-width: 220px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.keyheading p {
-    font-size: 36px;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
+
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(49,130,206,0.13);
 }
-
-
-
-.firstlinebox1, .secondlinebox1 {
-    padding: 0 50px 50px;
-    background-color: #c2e9bd;
+.feature-icon {
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+  display: block;
 }
-
-.firstlinebox, .secondlinebox {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.boxes{
-    height: 162px;
-    width: 290px;
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.boxes:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-}
-
-.boxes i {
-    font-size: 24px;
-    color: #FF8357;
-     margin-bottom: 10px;
-}
-
-#mainword1{
-    font-size: 18px;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
-}
-
-#mainword2{
-    font-size: 14px;
-    font-weight: 400;
-    font-family: 'Poppins', sans-serif;
-    color: #555;
-    line-height: 1.5;
-}
-
 
 footer {
     background-color: #1a2b3c;
@@ -354,7 +327,9 @@ footer {
 }
       
 .footer-logo {
+    width: 120px;
     margin-top: 20px;
+    border-radius: 50%;
 }
       
 .footer-section.links ul {
