@@ -6,6 +6,8 @@
 
 .dash-slide {
   display: flex;
+  align-items: flex-start;
+  text-align: center;
   min-height: 100vh;
 }
 
@@ -32,38 +34,37 @@
 }
 
 .sidebar ul li a {
-  color: #fff;
+  color: #f7fff7;
   text-decoration: none;
   display: block;
-  padding: 10px 40px;
-  transition: background 0.3s;
+  padding: 10px 30px;
+  transition: background 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-  background: #34495e;
+  background: #f7fff7;
+  color: black;
 }
 
 .main-content {
   flex: 1;
   padding: 40px;
+  overflow-y: auto;
+
 }
 
-.slider {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  padding: 20px 0;
-}
+
 
 .slide {
-  min-width: 300px;
+  
   background: #fff;
   box-shadow: 0 2px 8px rgba(60,60,60,0.1);
   border-radius: 8px;
+  display: flex;
+  align-items: center;
   padding: 30px;
   text-align: center;
   font-size: 1.2em;
-  flex-shrink: 0;
 }
 
 /* Responsive styles */
