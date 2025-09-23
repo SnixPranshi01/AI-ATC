@@ -5,11 +5,13 @@
 
 body {
     font-family: 'Montserrat', 'Poppins', sans-serif;
-    background-color: #c2e9bd;
+    background-color:#F7FFF7 ;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-image: url(images/FARMPAGE.jpeg);
+    opacity:0.95;
 }
 
 .bigcontainer{
@@ -23,9 +25,9 @@ body {
 #button{
     height: 60px;
     width: 40px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    background-color: #c2e9bd;
-    border-radius: 8px;
+    border: 1px solid whitesmoke;
+    background-color: #F7FFF7;
+    border-radius: 50%;
     margin: 20px;
     cursor: pointer;
     display: flex;
@@ -43,10 +45,11 @@ body {
 
 .smallcontainer{
     height: auto;
-    width: 700px;
+    width: 500px;
     background-color: white;
     margin: 0 auto;
-    padding: 30px;
+    margin-bottom: 60px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
