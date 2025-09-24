@@ -9,6 +9,12 @@
 
 </head>
 <body>
+    <script>
+    if(localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = 'login.html';
+    }
+   </script>
+
     <div class="main">
         <div class="dash-slider">
             <nav class="sidebar">
@@ -21,21 +27,22 @@
             <li><a href="#"><i class="fa fa-comment-dots"></i> Feedbacks</a></li>
             <li><a href="#"><i class="fa fa-users"></i> Community</a></li>
             <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-            <li><a href="#"><i class="fa fa-sign-out-alt"></i> Log Out</a></li>
+            <li><a href="#" id="logout-btn"><i class="fa fa-sign-out-alt"></i> Log Out</a></li>
             </ul>
             </nav>
-            <div class="main-page">
-            <main class="main-content">
-            <div id="upload-sec" class="slide"></div>
-            <div id="score-sec" class="slide"></div>
-            <div id="feedback-sec" class="slide"></div>
-            <div id="breed-data" class="slide"></div>
-            </main>
-            </div>
+            
             </div>
         
         </div>
         
     </div>
+ <script>
+document.getElementById('logout-btn').addEventListener('click', function(){
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = 'login.html';
+});
+</script>
+
+
 </body>
 </html>

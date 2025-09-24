@@ -24,10 +24,11 @@
                 </button>
             </div>
              <div class="manycontainer" id="login-form">
-                <div class="container">
+                <div id="error-message" style="color: red; display: none;"></div>
+                <div class="container" id="email">
                     <input type="text" id="email" placeholder="Email Address">
                 </div>
-                <div class="container">
+                <div class="container" id="password">
                     <input type="password" id="password" placeholder="Password">
                 </div>
                 <div class="checkbox">
@@ -40,7 +41,7 @@
                 
                 <div id="error-message" style="display: none;"></div>
            
-                <button id="diffcontainer"  onclick="handleLogin()">Log in</button>
+                <button id="diffcontainer"  >Log in</button>
             </div>
             <div class="separator">or</div>
             

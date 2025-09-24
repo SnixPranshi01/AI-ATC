@@ -46,26 +46,9 @@
   color: black;
 }
 
-.main-content {
-  flex: 1;
-  padding: 40px;
-  overflow-y: auto;
-
-}
 
 
 
-.slide {
-  
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(60,60,60,0.1);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  padding: 30px;
-  text-align: center;
-  font-size: 1.2em;
-}
 
 /* Responsive styles */
 @media (max-width: 800px) {
