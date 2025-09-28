@@ -39,7 +39,6 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     return false;
   }
 
-  // Show success, then redirect after 1 second
   document.getElementById('error-message').style.color = '#239f46';
   document.getElementById('error-message').textContent = 'Account created successfully! Redirecting...';
   setTimeout(() => {
