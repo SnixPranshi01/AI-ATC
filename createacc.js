@@ -42,6 +42,6 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
   document.getElementById('error-message').style.color = '#239f46';
   document.getElementById('error-message').textContent = 'Account created successfully! Redirecting...';
   setTimeout(() => {
-    window.location.href = 'dashboared.html';
-  }, 1);
+    window.location.href = 'dashbored.html';
+  }, 1000);
 });
