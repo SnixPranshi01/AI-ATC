@@ -4,8 +4,291 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Image</title>
+    <link rel="stylesheet" href="upload-sec.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
-    <h1>Upload The Image</h1>
+<div class="firstcontainer">
+<div class="logo"></div>
+<nav class="navbar">
+    <div class="menu">
+            <button onclick="window.location.href='index.html'">HOME</button>
+            <button onclick="window.location.href='ecomm.html'">E-COMM</button>
+            <button onclick="window.location.href='community1.html'">COMMUNITY</button>
+            <button onclick="window.location.href='explore.html'">EXPLORE</button>
+    </div>
+</div>
+</nav>
+<div id="img-sec" >
+    <div id="upload">
+        <div id="camera"><section class="ai-system">
+        <h2>Animal Type Classification</h2>
+        <p>Scan or upload cow images for instant breed identification and health analysis</p>
+
+        <div class="ai-container">
+            <!-- Left Box: Cow Scanner -->
+            <div class="scanner">
+                <h3>Cow Scanner</h3>
+                <div class="scanner-box">
+                    <div class="image-box" id="preview-container">
+                        <p id="preview-placeholder">📷</p>
+                        <img id="preview-image" style="display:none; max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <video id="camera-stream" style="display:none; max-width: 100%; max-height: 100%; object-fit: contain;"></video>
+                    </div>
+                    <input type="file" id="file-input" accept="image/*" style="display:none;">
+                    <button class="camera-btn" id="camera-btn">Open Camera</button>
+                    <button class="upload-btn" id="upload-btn">Upload Image</button>
+                    <button class="capture-btn" id="capture-btn" style="display:none; background-color: #FF5722;">Capture Photo</button>
+                    <button class="retake-btn" id="retake-btn" style="display:none; background-color: #607D8B;">Retake</button>
+                </div>
+                <button class="analyze-btn">Analyze</button></div>
+                <div class="chat-box">
+                    <div class="chat-header">
+                        <h4>AI Assistant</h4>
+                        <p class="ai-status">Connected to Gemini AI</p>
+                    </div>
+                    <input type="text" id="chat-input" placeholder="Enter cow details like physical characteristics, age, etc.">
+                    <button class="send-btn" id="send-button">Send</button>
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Messages will appear here -->
+                        <div class="welcome-message">
+                            <p>Welcome! I'm your AI assistant powered by Gemini. Ask me questions about indigenous cattle breeds, health concerns, or farming practices!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="results">
+                <h3>Results Dashboard</h3>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="health">Health</button>
+                    <button class="tab-btn" data-tab="performance">Performance</button>
+                    <button class="tab-btn" data-tab="genetics">Genetics</button>
+                </div>
+                
+                <div id="loading-indicator" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing image... Please wait</p>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- Overview Tab -->
+                    <div id="overview" class="tab-pane active">
+                        <div class="result-card">
+                            <h4>Breed Identification</h4>
+                            <div class="breed-result">
+                                <span class="breed-name" id="breed-name">Analyzing...</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-level" id="confidence-level" style="width: 0%">0%</div>
+                                </div>
+                            </div>
+                            <p class="result-detail" id="breed-description">Upload or capture an image to identify the breed</p>
+                        </div>
+                        
+                        <div class="quick-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" id="weight-stat">--</span>
+                                <span class="stat-label">Weight</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="milk-stat">--</span>
+                                <span class="stat-label">Daily Milk</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="purity-stat">--</span>
+                                <span class="stat-label">Pure Breed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Health Tab -->
+                    <div id="health" class="tab-pane">
+                        <div class="health-indicators">
+                            <div class="gauge-container">
+                                <canvas id="bodyConditionGauge"></canvas>
+                                <p>Body Condition</p>
+                            </div>
+                            <div class="gauge-container">
+                                <canvas id="immunityGauge"></canvas>
+                                <p>Immunity Status</p>
+                            </div>
+                        </div>
+                        <div class="health-timeline">
+                            <h4>Vaccination Schedule</h4>
+                            <div class="timeline">
+                                <div class="timeline-item past">
+                                    <span class="date">Jan 15</span>
+                                    <span class="event">FMD Vaccine</span>
+                                    <span class="status">Completed</span>
+                                </div>
+                                <div class="timeline-item upcoming">
+                                    <span class="date">Aug 10</span>
+                                    <span class="event">Brucellosis Vaccine</span>
+                                    <span class="status">Due in 2 weeks</span>
+                                </div>
+                                <div class="timeline-item future">
+                                    <span class="date">Nov 05</span>
+                                    <span class="event">Anthrax Vaccine</span>
+                                    <span class="status">Upcoming</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Performance Tab -->
+                    <div id="performance" class="tab-pane">
+                        <div class="chart-container">
+                            <canvas id="milkProductionChart"></canvas>
+                        </div>
+                        <div class="performance-metrics">
+                            <h4>Feed Efficiency</h4>
+                            <div class="rating high">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                            </div>
+                            <h4>Reproductive Health</h4>
+                            <div class="status-indicator normal">
+                                <span class="indicator-dot"></span>Normal
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Genetics Tab -->
+                    <div id="genetics" class="tab-pane">
+                        <div class="genetic-profile">
+                            <h4>Genetic Composition</h4>
+                            <div class="chart-container">
+                                <canvas id="geneticsChart"></canvas>
+                            </div>
+                            <div class="genetic-traits">
+                                <div class="trait">
+                                    <span class="trait-name">Heat Tolerance</span>
+                                    <div class="trait-bar high"></div>
+                                </div>
+                                <div class="trait">
+                                    <span class="trait-name">Disease Resistance</span>
+                                    <div class="trait-bar medium"></div>
+                                </div>
+                                <div class="trait">
+                                    <span class="trait-name">Milk Fat Content</span>
+                                    <div class="trait-bar high"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="download-btn">Download Report</button>
+                    <button class="share-btn">Share Results</button>
+                </div>
+            </div>
+    </div>
+</div>
+ <footer>
+    <div class="footer-container">
+          <div class="footer-section about">
+              <h3>About BoviFy</h3>
+              <p>Empowering farmers with advanced AI technology to classify best bovine breeds and promote sustainable agriculture practices.</p>
+              <div class="footer-logo">
+                  <img src="images/logo.png" alt="BoviFy Logo" width="120px" >
+
+              </div>
+          </div>
+          
+          <div class="footer-section links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="ai.html">AI Technology</a></li>
+                  <li><a href="ecomm.html">E-Commerce</a></li>
+                  <li><a href="community1.html">Community</a></li>
+                  <li><a href="resources.html">Resources</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+                  </ul>
+                  </div>
+          
+          <div class="footer-section contact">
+              <h3>Contact Us</h3>
+              <p><i class="fas fa-envelope"></i> support@BoviFy.com</p>
+              <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+              <p><i class="fas fa-map-marker-alt"></i> Delhi, India</p>
+              <button class="contact-btn">Get in Touch</button>
+          </div>
+          
+          <div class="footer-section newsletter">
+              <h3>Subscribe to Our Newsletter</h3>
+              <p>Stay updated with the latest developments in sustainable farming</p>
+              <form class="newsletter-form">
+                  <input type="email" placeholder="Enter your email" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+           <div class="footer-section social">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                  <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+    </div>
+  
+    <div class="footer-middle">
+          <div class="footer-awards">
+              <h4>Recognition & Certifications</h4>
+              <div class="award-icons">
+                  <!-- <img src="images/award1.png" alt="Certification 1" onerror="this.src='images/placeholder-award.png'; this.onerror=null;"> -->
+                  <!-- <img src="images/award2.png" alt="Certification 2" onerror="this.src='images/placeholder-award.png'; this.onerror=null;"> -->
+                  <!-- <img src="images/award3.png" alt="Certification 3" onerror="this.src='images/placeholder-award.png'; this.onerror=null;"> -->
+                  <!-- <img src="images/award4.png" alt="Certification 4" onerror="this.src='images/placeholder-award.png'; this.onerror=null;"> -->
+              </div>
+              </div>
+    </div>
+    <div class="footer-bottom">
+          <div class="footer-app-download">
+              <p>Download our mobile app</p>
+              <div class="app-buttons">
+                  <a href="#" class="app-button">
+                      <i class="fab fa-google-play"></i> Google Play
+                  </a>
+                  <a href="#" class="app-button">
+                      <i class="fab fa-apple"></i> App Store
+                  </a>
+              </div>
+          </div>
+          <p>&copy; 2025 BoviFy. All Rights Reserved.</p>
+          <div class="footer-legal">
+              <a href="privacy.html">Privacy Policy</a> | 
+              <a href="terms.html">Terms of Service</a> | 
+              <a href="cookies.html">Cookie Policy</a> |
+              <a href="sitemap.html">Sitemap</a> |
+              <div class="language-selector">
+                  <select id="language-select" onchange="changeLanguage(this.value)">
+                      <option value="en">English</option>
+                       <option value="hi">हिंदी</option>
+                      <option value="gu">ગુજરાતી</option>
+                      <option value="pa">ਪੰਜਾਬੀ</option>
+                  </select>
+              </div>
+          </div>
+    </div>
+      
+    <div class="back-to-top">
+          <a href="#top" id="scroll-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    </footer>
+    <script src="upload.js"></script>
 </body>
 </html>
