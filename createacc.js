@@ -1,4 +1,4 @@
-// document.getElementById('signupForm').addEventListener('submit', function(event) {
+document.getElementById('signupForm').addEventListener('submit', function(event) {
   event.preventDefault();
   let password = document.getElementById('password').value;
   let repeatPassword = document.getElementById('repeat-password').value;
@@ -13,6 +13,10 @@
     document.getElementById('error-message').textContent = error;
     return false;
   }
+  localStorage.setItem('userEmail', email);
+  localStorage.setItem('userPassword', password);
+
+  
 
   // Show success (for demo purposes, real implementation would send data)
   document.getElementById('error-message').style.color = '#239f46';
@@ -22,7 +26,7 @@
     document.getElementById('error-message').style.color = '#d0314c';
     document.getElementById('signupForm').reset();
   }, 1500);
-// });
+ });
 document.getElementById('signupForm').addEventListener('submit', function(event) {
   event.preventDefault();
   let password = document.getElementById('password').value;
