@@ -2,7 +2,14 @@
     padding: 0px;
     margin: 0px;
 }
-
+#heading{
+    width: auto;
+    height: 10px;
+    margin-left: 450px;
+    padding-bottom: 40px;
+    color: #1A531a;
+    
+}
 .Overview {
     padding: 20px 50px;
     /* background-color: #1A535c; */
