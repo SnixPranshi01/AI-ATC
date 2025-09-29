@@ -1,0 +1,83 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="dashboared.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- <script>
+  if(localStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = 'login.html';
+  }
+</script> -->
+
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  
+  <nav class="sidebar">
+    <h2>BoviFy</h2>
+    <ul>
+      <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="upload.html"><i class="fa fa-upload"></i> Upload Image</a></li>
+      <li><a href="analytics.html"><i class="fa fa-chart-line"></i> Analytics</a></li>
+      <li><a href="reports.html"><i class="fa fa-file-alt"></i> Reports</a></li>
+      <li><a href="feedback.html"><i class="fa fa-comment-dots"></i> Feedbacks</a></li>
+      <li><a href="community.html"><i class="fa fa-users"></i> Community</a></li>
+      <li><a href="settings.html"><i class="fa fa-cog"></i> Settings</a></li>
+      <li><a href="#" id="logout-btn"><i class="fa fa-sign-out-alt"></i> Log Out</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header>
+      <h1>Welcome, User!</h1>
+      <p>Here is your dashboard overview.</p>
+    </header>
+
+    <!-- Quick Access Cards -->
+    <div class="cards-container">
+      <div class="card">
+        <i class="fa fa-upload card-icon"></i>
+        <h3>Upload Image</h3>
+        <p>Classify your cattle images quickly with AI.</p>
+        <a href="upload.html" class="card-btn">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fa fa-chart-line card-icon"></i>
+        <h3>Analytics</h3>
+        <p>View detailed breed statistics and trends.</p>
+        <a href="analytics.html" class="card-btn">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fa fa-file-alt card-icon"></i>
+        <h3>Reports</h3>
+        <p>Check your previous classification reports.</p>
+        <a href="reports.html" class="card-btn">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fa fa-comment-dots card-icon"></i>
+        <h3>Feedbacks</h3>
+        <p>See user feedback and suggestions.</p>
+        <a href="feedback.html" class="card-btn">Go</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('logout-btn').addEventListener('click', function(){
+      localStorage.removeItem('isLoggedIn');
+      window.location.href = 'login.html';
+  });
+</script>
+</body>
+</html>
+```

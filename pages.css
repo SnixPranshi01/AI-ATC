@@ -1,0 +1,168 @@
+/* ===== Global ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-container {
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  max-width: 1200px;
+  width: 95%;
+  margin: 28px auto;
+  text-align: center;
+}
+
+.page-container h1 {
+  color: #1a535c;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.page-container p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* ===== Charts & Cards ===== */
+.charts-container,
+.cards-container,
+.community-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 24px 0;
+}
+
+.chart-card,
+.card {
+  background: #ffe66d;
+  color: #1a535c;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1 1 320px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.chart-card:hover,
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.card h3 { margin: 0 0 10px; font-size: 1.2rem; }
+.card p { margin: 0 0 14px; color: #2b2b2b; }
+
+.card .action {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #1a535c;
+  color: #ffe66d;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.card .action:hover { background: #0d2e33; }
+
+/* ===== Insights (Analytics) ===== */
+.insights {
+  text-align: left;
+  background: #1a535c;
+  color: #ffe66d;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+.insights ul { list-style: inside disc; line-height: 1.6; }
+
+/* ===== Feedback ===== */
+.feedback-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.feedback-form .btn-submit {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: #1a535c;
+  color: #ffe66d;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.feedback-form .btn-submit:hover { background: #0d2e33; }
+
+.feedback-list { margin-top: 24px; text-align: left; }
+.feedback-list h2 { color: #1a535c; margin-bottom: 12px; }
+
+.feedback-card {
+  background: #fff;
+  color: #1a535c;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.feedback-card p { margin: 0; color: #2b2b2b; }
+
+/* ===== Settings ===== */
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+  margin: 20px auto;
+  text-align: left;
+}
+.settings-form input,
+.settings-form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.settings-form .btn-save {
+  padding: 10px 18px;
+  background: #1a535c;
+  color: #ffe66d;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.settings-form .btn-save:hover { background: #0d2e33; }
+
+/* ===== Back Button ===== */
+.back-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #1a535c;
+  color: #ffe66d;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.back-btn:hover { background: #0d2e33; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .charts-container,
+  .cards-container,
+  .community-cards { flex-direction: column; }
+  .page-container { padding: 20px; }
+}

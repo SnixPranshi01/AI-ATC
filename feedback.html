@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedbacks</title>
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <script>
+        if(localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <div class="page-container">
+        <h1>Feedbacks</h1>
+        <p>Here you can see the recent feedbacks submitted by users.</p>
+
+        <!-- Feedback Form -->
+        <div class="feedback-form">
+            <textarea placeholder="Write your feedback..."></textarea>
+            <button>Submit Feedback</button>
+        </div>
+
+        <!-- Recent Feedbacks -->
+        <div class="feedback-list">
+            <h2>Recent Feedbacks</h2>
+
+            <div class="feedback-card">
+                <div class="feedback-meta">
+                    <strong>John Doe</strong> <span>– 29 Sep 2025</span>
+                </div>
+                <p>Great platform! The analytics feature is very useful.</p>
+            </div>
+
+            <div class="feedback-card">
+                <div class="feedback-meta">
+                    <strong>Jane Smith</strong> <span>– 28 Sep 2025</span>
+                </div>
+                <p>The dashboard design is intuitive and attractive.</p>
+            </div>
+
+            <div class="feedback-card">
+                <div class="feedback-meta">
+                    <strong>Mike Lee</strong> <span>– 27 Sep 2025</span>
+                </div>
+                <p>Would love to see more charts and analytics on breeds.</p>
+            </div>
+
+        </div>
+
+        <a href="dashboared.html" class="back-btn"></i> Back to Dashboard</a>
+    </div>
+</body>
+</html>
